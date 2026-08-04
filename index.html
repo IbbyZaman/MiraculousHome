@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Your Miraculous Experience</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #0b0c10;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(230, 0, 0, 0.7);
+    }
+
+    header p {
+      color: #a0a0a0;
+      margin-top: 0.5rem;
+    }
+
+    .wrapper {
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      z-index: 10;
+    }
+
+    /* Top Row (V1 and V2 Side-by-Side) */
+    .top-row {
+      display: flex;
+      gap: 20px;
+      width: 100%;
+    }
+
+    /* Bottom Row (CineStream Centered) */
+    .bottom-row {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .card {
+      flex: 1;
+      border-radius: 16px;
+      padding: 2rem 1.8rem;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid transparent;
+    }
+
+    /* Ladybug / Classic Theme */
+    .classic-v1 {
+      background: linear-gradient(135deg, #e60000 0%, #800000 100%);
+      box-shadow: 0 10px 30px rgba(230, 0, 0, 0.3);
+    }
+
+    .classic-v1:hover {
+      transform: translateY(-8px);
+      border-color: #ffffff;
+      box-shadow: 0 15px 40px rgba(230, 0, 0, 0.6);
+    }
+
+    /* Cat Noir / New Version Theme */
+    .new-v2 {
+      background: linear-gradient(135deg, #1a1a24 0%, #08080c 100%);
+      border-color: #39ff14;
+      box-shadow: 0 10px 30px rgba(57, 255, 20, 0.2);
+    }
+
+    .new-v2:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(57, 255, 20, 0.5);
+    }
+
+    /* CineStream Theme (Gold & Deep Purple) */
+    .cinestream {
+      background: linear-gradient(135deg, #2b1055 0%, #7597de 100%);
+      border-color: #ffd700;
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+    }
+
+    .cinestream:hover {
+      transform: translateY(-8px);
+      border-color: #ffffff;
+      box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
+    }
+
+    .badge {
+      display: inline-block;
+      align-self: center;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .classic-v1 .badge { background: rgba(0, 0, 0, 0.4); }
+    .new-v2 .badge { background: #39ff14; color: #000; }
+    .cinestream .badge { background: #ffd700; color: #000; }
+
+    .card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: background 0.2s;
+    }
+
+    .classic-v1 .btn { background: #fff; color: #e60000; }
+    .new-v2 .btn { background: #39ff14; color: #000; }
+    .cinestream .btn { background: #ffd700; color: #000; }
+
+    /* Responsive stacked view on mobile */
+    @media (max-width: 768px) {
+      .top-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>MIRACULOUS STREAMING</h1>
+    <p>Select your preferred version to start watching</p>
+  </header>
+
+  <div class="wrapper">
+    <!-- TOP ROW (V1 & V2) -->
+    <main class="top-row">
+      <!-- CLASSIC / V1 CARD -->
+      <a href="https://v1.yourbrand.com" class="card classic-v1">
+        <div>
+          <span class="badge">🐞 Classic Experience</span>
+          <h2>Version 1 (Classic)</h2>
+          <p>The original, lightweight web player. Perfect for older devices and simple streaming.</p>
+        </div>
+        <span class="btn">Enter V1 Player</span>
+      </a>
+
+      <!-- NEW / V2 CARD -->
+      <a href="https://v2.yourbrand.com" class="card new-v2">
+        <div>
+          <span class="badge">🐾 Cataclysm V2</span>
+          <h2>Version 2 (New)</h2>
+          <p>Upgraded UI with 4K support, user profiles, episode watchlists, and live chat features.</p>
+        </div>
+        <span class="btn">Launch V2 Portal</span>
+      </a>
+    </main>
+
+    <!-- BOTTOM ROW (CINESTREAM) -->
+    <section class="bottom-row">
+      <a href="https://cinema.yourbrand.com" class="card cinestream">
+        <div>
+          <span class="badge">🎬 Cinema Mode</span>
+          <h2>CineStream (BETA)</h2>
+          <p>WATCH ANY MOVIE OR SERIES THAT YOU WANT TO FOR FREE! (With no ads)</p>
+        </div>
+        <span class="btn">Launch CineStream</span>
+      </a>
+    </section>
+  </div>
+
+</body>
+</html>
